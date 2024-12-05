@@ -1,15 +1,40 @@
 <div id="sidebar" [class.close]="isSidebarClosed" class="fixed bg-gray-800 text-white h-full w-60 transition-all duration-300">
   <button id="toggle-btn" (click)="toggleSidebar()" class="p-3 w-full bg-gray-700">
-    <span class="text-sm">Toggle</span>
+    <span class="text-sm">GRANJA</span>
   </button>
 
   <ul class="mt-4">
+    <!-- Dashboard -->
+    <li>
+      <a 
+        routerLink="/dashboard" 
+        class="w-full text-left p-3 hover:bg-gray-700 flex items-center space-x-2">
+        <fa-icon [icon]="faTachometerAlt"></fa-icon>
+        <p>Dashboard</p>
+      </a>
+    </li>
     <!-- Personal -->
     <li>
-      <button class="dropdown-btn w-full text-left p-3 hover:bg-gray-700" (click)="toggleSubMenu('personal')">
-        Personal
+      
+      <button 
+        class="dropdown-btn w-full text-left p-3 hover:bg-gray-700 flex justify-between items-center" 
+        (click)="toggleSubMenu('personal')">
+        <span class="flex items-center space-x-2">
+          <fa-icon [icon]="faUsers"></fa-icon>
+          <p>Personal</p>
+        </span>
+        
+        <fa-icon 
+          *ngIf="activeSubMenu === 'personal'" 
+          [icon]="faChevronUp">
+        </fa-icon>
+      
+        <fa-icon 
+          *ngIf="activeSubMenu !== 'personal'" 
+          [icon]="faChevronDown">
+        </fa-icon>
       </button>
-      <ul [class.show]="activeSubMenu === 'personal'" class="sub-menu pl-4">
+      <ul  [class.show]="activeSubMenu === 'personal'" class="sub-menu pl-4">
         <li><a routerLink="/usuarios" class="block p-2 hover:bg-gray-600">Usuarios</a></li>
         <li><a routerLink="/trabajadores" class="block p-2 hover:bg-gray-600">Trabajadores</a></li>
         <li><a routerLink="/roles" class="block p-2 hover:bg-gray-600">Roles</a></li>
@@ -19,9 +44,24 @@
 
     <!-- Ganado -->
     <li>
-      <button class="dropdown-btn w-full text-left p-3 hover:bg-gray-700" (click)="toggleSubMenu('ganado')">
-        Ganado
-      </button>
+      <button 
+      class="dropdown-btn w-full text-left p-3 hover:bg-gray-700 flex justify-between items-center" 
+      (click)="toggleSubMenu('ganado')">
+      <span class="flex items-center space-x-2">
+        <fa-icon [icon]="faCow"></fa-icon>
+        <p>Ganado</p>
+      </span>
+      
+      <fa-icon 
+        *ngIf="activeSubMenu === 'ganado'" 
+        [icon]="faChevronUp">
+      </fa-icon>
+    
+      <fa-icon 
+        *ngIf="activeSubMenu !== 'ganado'" 
+        [icon]="faChevronDown">
+      </fa-icon>
+    </button>
       <ul [class.show]="activeSubMenu === 'ganado'" class="sub-menu pl-4">
         <li><a routerLink="/registro" class="block p-2 hover:bg-gray-600">Registro</a></li>
         <li><a routerLink="/tipo" class="block p-2 hover:bg-gray-600">Tipo</a></li>
@@ -33,9 +73,24 @@
 
     <!-- Sanidad -->
     <li>
-      <button class="dropdown-btn w-full text-left p-3 hover:bg-gray-700" (click)="toggleSubMenu('sanidad')">
-        Sanidad
-      </button>
+      <button 
+      class="dropdown-btn w-full text-left p-3 hover:bg-gray-700 flex justify-between items-center" 
+      (click)="toggleSubMenu('sanidad')">
+      <span class="flex items-center space-x-2">
+        <fa-icon [icon]="faStethoscope"></fa-icon>
+        <p>Sanidad</p>
+      </span>
+      
+      <fa-icon 
+        *ngIf="activeSubMenu === 'sanidad'" 
+        [icon]="faChevronUp">
+      </fa-icon>
+    
+      <fa-icon 
+        *ngIf="activeSubMenu !== 'sanidad'" 
+        [icon]="faChevronDown">
+      </fa-icon>
+    </button>
       <ul [class.show]="activeSubMenu === 'sanidad'" class="sub-menu pl-4">
         <li><a routerLink="/estado-salud" class="block p-2 hover:bg-gray-600">Estado Salud</a></li>
         <li><a routerLink="/reproduccion" class="block p-2 hover:bg-gray-600">Reproducción</a></li>
@@ -48,9 +103,24 @@
 
     <!-- Alimentación -->
     <li>
-      <button class="dropdown-btn w-full text-left p-3 hover:bg-gray-700" (click)="toggleSubMenu('alimentacion')">
-        Alimentación
-      </button>
+      <button 
+      class="dropdown-btn w-full text-left p-3 hover:bg-gray-700 flex justify-between items-center" 
+      (click)="toggleSubMenu('alimentacion')">
+      <span class="flex items-center space-x-2">
+        <fa-icon [icon]="faCarrot"></fa-icon>
+        <p>alimentacion</p>
+      </span>
+      
+      <fa-icon 
+        *ngIf="activeSubMenu === 'alimentacion'" 
+        [icon]="faChevronUp">
+      </fa-icon>
+    
+      <fa-icon 
+        *ngIf="activeSubMenu !== 'alimentacion'" 
+        [icon]="faChevronDown">
+      </fa-icon>
+    </button>
       <ul [class.show]="activeSubMenu === 'alimentacion'" class="sub-menu pl-4">
         <li><a routerLink="/alimentos" class="block p-2 hover:bg-gray-600">Alimentos</a></li>
         <li><a routerLink="/categoria" class="block p-2 hover:bg-gray-600">Categoría</a></li>

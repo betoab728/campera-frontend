@@ -9,6 +9,8 @@ import { faUserTie  } from '@fortawesome/free-solid-svg-icons';
 import { faBriefcase  } from '@fortawesome/free-solid-svg-icons';
 import { faUser  } from '@fortawesome/free-solid-svg-icons';
 import { faChartBar  } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faChevronUp,faCow,faStethoscope,faCarrot } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -29,9 +31,13 @@ export class SidebarComponent   {
   faBriefcase = faBriefcase;
   faUser = faUser;
   faChartBar = faChartBar;
+  faChevronDown = faChevronDown;
+  faChevronUp = faChevronUp;
+  faCow = faCow;
+  faStethoscope = faStethoscope;
+  faCarrot = faCarrot;
 
   // Declaración de los iconos
- 
 
   isSidebarClosed = false;
   activeSubMenu: string | null = null;
