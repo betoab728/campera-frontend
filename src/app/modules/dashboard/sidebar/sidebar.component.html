@@ -1,0 +1,81 @@
+<aside class="bg-gradient-to-br from-gray-800 to-gray-900 fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-64 rounded-xl">
+  <div class="border-b border-white/20 p-4">
+    <h1 class="text-white text-xl font-bold">Gestión de Ganadería</h1>
+  </div>
+
+  <nav class="mt-4">
+    <!-- Menú Personal -->
+    <div>
+      <button
+        (click)="toggleMenu('personal')"
+        class="flex items-center justify-between w-full text-white px-4 py-2 hover:bg-white/10 rounded-lg"
+      >
+        <span>Personal</span>
+        <svg
+          [class.rotate-180]="menuState.personal"
+          class="h-5 w-5 transition-transform"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          ></path>
+        </svg>
+      </button>
+      <ul
+        *ngIf="menuState.personal"
+        class="mt-2 space-y-1 px-4"
+      >
+        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Usuarios</a></li>
+        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Trabajadores</a></li>
+        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Roles</a></li>
+        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Cargos</a></li>
+      </ul>
+    </div>
+
+    <!-- Menú Ganado -->
+    <div class="mt-4">
+      <button
+        (click)="toggleMenu('ganado')"
+        class="flex items-center justify-between w-full text-white px-4 py-2 hover:bg-white/10 rounded-lg"
+      >
+        <span>Ganado</span>
+        <svg
+          [class.rotate-180]="menuState.ganado"
+          class="h-5 w-5 transition-transform"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          ></path>
+        </svg>
+      </button>
+      <ul
+        *ngIf="menuState.ganado"
+        class="mt-2 space-y-1 px-4"
+      >
+        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Registro</a></li>
+        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Tipo</a></li>
+        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Raza</a></li>
+        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Ubicación</a></li>
+        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Dieta</a></li>
+      </ul>
+    </div>
+
+    <!-- Repite las secciones para Sanidad y Alimentación -->
+    <div class="mt-4">
+      <!-- Continúa implementando Sanidad y Alimentación de forma similar -->
+    </div>
+  </nav>
+</aside>

@@ -1,0 +1,29 @@
+<!-- app-login.component.html -->
+<div id="bg"></div>
+<div class="mt-3">
+  <form (ngSubmit)="login()" #formLogin="ngForm">
+    <label for="Usuario"></label>
+    <input type="text" name="name" id="name" placeholder="Usuario" class="mt-3 user w-full p-2 mb-4 border border-gray-300 rounded-md"
+    [(ngModel)]="credentials.name" required #name="ngModel"/>
+
+    <div class="text-red-500 text-sm" [hidden]="name.valid || name.pristine">
+      <p>El nombre es obligatorio.</p>
+    </div>
+
+    <label for="password"></label>
+    <input type="password" name="password" id="password" placeholder="Contraseña" class="pass w-full p-2 mb-4 border border-gray-300 rounded-md"
+    [(ngModel)]="credentials.password" required #clave="ngModel"/>
+
+    <div class="text-red-500 text-sm" [hidden]="clave.valid || clave.pristine">
+      <p>La Contraseña es obligatorio.</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="mb-4 text-red-500 text-sm">
+      {{ errorMessage }}
+    </div>
+
+    <button type="submit" class="bg-green-800 shadow-md text-white w-full py-2 rounded-md hover:bg-green-900 transition duration-300">
+      Login
+    </button>
+  </form>
+</div>
