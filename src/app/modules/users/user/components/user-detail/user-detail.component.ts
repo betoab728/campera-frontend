@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-user-detail',
-  standalone: false,
+  standalone: true,
   templateUrl: './user-detail.component.html',
   styleUrl: './user-detail.component.css'
 })
