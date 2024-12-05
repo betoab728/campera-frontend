@@ -1,81 +1,62 @@
-<aside class="bg-gradient-to-br from-gray-800 to-gray-900 fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-64 rounded-xl">
-  <div class="border-b border-white/20 p-4">
-    <h1 class="text-white text-xl font-bold">Gestión de Ganadería</h1>
-  </div>
+<div id="sidebar" [class.close]="isSidebarClosed" class="fixed bg-gray-800 text-white h-full w-60 transition-all duration-300">
+  <button id="toggle-btn" (click)="toggleSidebar()" class="p-3 w-full bg-gray-700">
+    <span class="text-sm">Toggle</span>
+  </button>
 
-  <nav class="mt-4">
-    <!-- Menú Personal -->
-    <div>
-      <button
-        (click)="toggleMenu('personal')"
-        class="flex items-center justify-between w-full text-white px-4 py-2 hover:bg-white/10 rounded-lg"
-      >
-        <span>Personal</span>
-        <svg
-          [class.rotate-180]="menuState.personal"
-          class="h-5 w-5 transition-transform"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"
-          ></path>
-        </svg>
+  <ul class="mt-4">
+    <!-- Personal -->
+    <li>
+      <button class="dropdown-btn w-full text-left p-3 hover:bg-gray-700" (click)="toggleSubMenu('personal')">
+        Personal
       </button>
-      <ul
-        *ngIf="menuState.personal"
-        class="mt-2 space-y-1 px-4"
-      >
-        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Usuarios</a></li>
-        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Trabajadores</a></li>
-        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Roles</a></li>
-        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Cargos</a></li>
+      <ul [class.show]="activeSubMenu === 'personal'" class="sub-menu pl-4">
+        <li><a routerLink="/usuarios" class="block p-2 hover:bg-gray-600">Usuarios</a></li>
+        <li><a routerLink="/trabajadores" class="block p-2 hover:bg-gray-600">Trabajadores</a></li>
+        <li><a routerLink="/roles" class="block p-2 hover:bg-gray-600">Roles</a></li>
+        <li><a routerLink="/cargos" class="block p-2 hover:bg-gray-600">Cargos</a></li>
       </ul>
-    </div>
+    </li>
 
-    <!-- Menú Ganado -->
-    <div class="mt-4">
-      <button
-        (click)="toggleMenu('ganado')"
-        class="flex items-center justify-between w-full text-white px-4 py-2 hover:bg-white/10 rounded-lg"
-      >
-        <span>Ganado</span>
-        <svg
-          [class.rotate-180]="menuState.ganado"
-          class="h-5 w-5 transition-transform"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"
-          ></path>
-        </svg>
+    <!-- Ganado -->
+    <li>
+      <button class="dropdown-btn w-full text-left p-3 hover:bg-gray-700" (click)="toggleSubMenu('ganado')">
+        Ganado
       </button>
-      <ul
-        *ngIf="menuState.ganado"
-        class="mt-2 space-y-1 px-4"
-      >
-        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Registro</a></li>
-        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Tipo</a></li>
-        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Raza</a></li>
-        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Ubicación</a></li>
-        <li><a href="#" class="block px-4 py-2 text-white hover:bg-white/10 rounded-lg">Dieta</a></li>
+      <ul [class.show]="activeSubMenu === 'ganado'" class="sub-menu pl-4">
+        <li><a routerLink="/registro" class="block p-2 hover:bg-gray-600">Registro</a></li>
+        <li><a routerLink="/tipo" class="block p-2 hover:bg-gray-600">Tipo</a></li>
+        <li><a routerLink="/raza" class="block p-2 hover:bg-gray-600">Raza</a></li>
+        <li><a routerLink="/ubicacion" class="block p-2 hover:bg-gray-600">Ubicación</a></li>
+        <li><a routerLink="/dieta" class="block p-2 hover:bg-gray-600">Dieta</a></li>
       </ul>
-    </div>
+    </li>
 
-    <!-- Repite las secciones para Sanidad y Alimentación -->
-    <div class="mt-4">
-      <!-- Continúa implementando Sanidad y Alimentación de forma similar -->
-    </div>
-  </nav>
-</aside>
+    <!-- Sanidad -->
+    <li>
+      <button class="dropdown-btn w-full text-left p-3 hover:bg-gray-700" (click)="toggleSubMenu('sanidad')">
+        Sanidad
+      </button>
+      <ul [class.show]="activeSubMenu === 'sanidad'" class="sub-menu pl-4">
+        <li><a routerLink="/estado-salud" class="block p-2 hover:bg-gray-600">Estado Salud</a></li>
+        <li><a routerLink="/reproduccion" class="block p-2 hover:bg-gray-600">Reproducción</a></li>
+        <li><a routerLink="/tratamientos" class="block p-2 hover:bg-gray-600">Tratamientos</a></li>
+        <li><a routerLink="/vacunas" class="block p-2 hover:bg-gray-600">Vacunas</a></li>
+        <li><a routerLink="/celo" class="block p-2 hover:bg-gray-600">Celo</a></li>
+        <li><a routerLink="/apareamiento" class="block p-2 hover:bg-gray-600">Apareamiento</a></li>
+      </ul>
+    </li>
+
+    <!-- Alimentación -->
+    <li>
+      <button class="dropdown-btn w-full text-left p-3 hover:bg-gray-700" (click)="toggleSubMenu('alimentacion')">
+        Alimentación
+      </button>
+      <ul [class.show]="activeSubMenu === 'alimentacion'" class="sub-menu pl-4">
+        <li><a routerLink="/alimentos" class="block p-2 hover:bg-gray-600">Alimentos</a></li>
+        <li><a routerLink="/categoria" class="block p-2 hover:bg-gray-600">Categoría</a></li>
+        <li><a routerLink="/ingreso" class="block p-2 hover:bg-gray-600">Ingreso</a></li>
+        <li><a routerLink="/salida" class="block p-2 hover:bg-gray-600">Salida</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>

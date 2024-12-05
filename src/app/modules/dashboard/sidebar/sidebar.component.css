@@ -1,3 +1,23 @@
-.icon-size {
-    font-size: 1.5rem; /* Ajusta el tamaño según tus necesidades */
-  }
+#sidebar {
+  width: 250px;
+}
+
+#sidebar.close {
+  width: 60px;
+}
+
+.sub-menu {
+  display: none;
+}
+
+.sub-menu.show {
+  display: block;
+}
+
+.dropdown-btn.rotate {
+  transform: rotate(90deg);
+}
+
+.dropdown-btn {
+  transition: transform 0.3s ease;
+}
