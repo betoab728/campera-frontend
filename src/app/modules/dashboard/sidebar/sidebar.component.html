@@ -1,5 +1,5 @@
-<div id="sidebar" [class.close]="isSidebarClosed" class="fixed bg-gray-800 text-white h-full w-60 transition-all duration-300">
-  <button id="toggle-btn" (click)="toggleSidebar()" class="p-3 w-full bg-gray-700">
+<div id="sidebar" [class.close]="isSidebarClosed" class="fixed bg-green-900 text-white h-full w-60 transition-all duration-300">
+  <button id="toggle-btn" (click)="toggleSidebar()" class="p-3 w-full bg-green-900">
     <span class="text-sm">GRANJA</span>
   </button>
 
@@ -8,7 +8,7 @@
     <li>
       <a 
         routerLink="/dashboard" 
-        class="w-full text-left p-3 hover:bg-gray-700 flex items-center space-x-2">
+        class="w-full text-left p-3 hover:bg-green-800 flex items-center space-x-2">
         <fa-icon [icon]="faTachometerAlt"></fa-icon>
         <p>Dashboard</p>
       </a>
@@ -17,7 +17,7 @@
     <li>
       
       <button 
-        class="dropdown-btn w-full text-left p-3 hover:bg-gray-700 flex justify-between items-center" 
+        class="dropdown-btn w-full text-left p-3 hover:bg-green-800 flex justify-between items-center" 
         (click)="toggleSubMenu('personal')">
         <span class="flex items-center space-x-2">
           <fa-icon [icon]="faUsers"></fa-icon>
@@ -35,17 +35,16 @@
         </fa-icon>
       </button>
       <ul  [class.show]="activeSubMenu === 'personal'" class="sub-menu pl-4">
-        <li><a routerLink="dashboard/users-list" class="block p-2 hover:bg-gray-600">Usuarios</a></li>
-        <li><a routerLink="dashboard/employees-list" class="block p-2 hover:bg-gray-600">Trabajadores</a></li>
-        <li><a routerLink="/roles" class="block p-2 hover:bg-gray-600">Roles</a></li>
-        <li><a routerLink="/cargos" class="block p-2 hover:bg-gray-600">Cargos</a></li>
+        <li><a routerLink="dashboard/users-list" class="block p-2 hover:bg-green-600">Usuarios</a></li>
+        <li><a routerLink="dashboard/employees-list" class="block p-2 hover:bg-green-600">Trabajadores</a></li>
+        <li><a routerLink="/roles" class="block p-2 hover:bg-green-600">Roles</a></li>
+        <li><a routerLink="/cargos" class="block p-2 hover:bg-green-600">Cargos</a></li>
       </ul>
     </li>
-
     <!-- Ganado -->
     <li>
       <button 
-      class="dropdown-btn w-full text-left p-3 hover:bg-gray-700 flex justify-between items-center" 
+      class="dropdown-btn w-full text-left p-3 hover:bg-green-800 flex justify-between items-center" 
       (click)="toggleSubMenu('ganado')">
       <span class="flex items-center space-x-2">
         <fa-icon [icon]="faCow"></fa-icon>
@@ -63,18 +62,18 @@
       </fa-icon>
     </button>
       <ul [class.show]="activeSubMenu === 'ganado'" class="sub-menu pl-4">
-        <li><a routerLink="/registro" class="block p-2 hover:bg-gray-600">Registro</a></li>
-        <li><a routerLink="/tipo" class="block p-2 hover:bg-gray-600">Tipo</a></li>
-        <li><a routerLink="/raza" class="block p-2 hover:bg-gray-600">Raza</a></li>
-        <li><a routerLink="/ubicacion" class="block p-2 hover:bg-gray-600">Ubicación</a></li>
-        <li><a routerLink="/dieta" class="block p-2 hover:bg-gray-600">Dieta</a></li>
+        <li><a routerLink="dashboard/ganado" class="block p-2 hover:bg-gray-600">Registro</a></li>
+        <li><a routerLink="dashboard/tipo" class="block p-2 hover:bg-gray-600">Tipo</a></li>
+        <li><a routerLink="dashboard/raza" class="block p-2 hover:bg-gray-600">Raza</a></li>
+        <li><a routerLink="dashboard/ubicacion" class="block p-2 hover:bg-gray-600">Ubicación</a></li>
+        <li><a routerLink="dashboard/dieta" class="block p-2 hover:bg-gray-600">Dieta</a></li>
       </ul>
     </li>
 
     <!-- Sanidad -->
     <li>
       <button 
-      class="dropdown-btn w-full text-left p-3 hover:bg-gray-700 flex justify-between items-center" 
+      class="dropdown-btn w-full text-left p-3 hover:bg-green-800 flex justify-between items-center" 
       (click)="toggleSubMenu('sanidad')">
       <span class="flex items-center space-x-2">
         <fa-icon [icon]="faStethoscope"></fa-icon>
@@ -92,19 +91,19 @@
       </fa-icon>
     </button>
       <ul [class.show]="activeSubMenu === 'sanidad'" class="sub-menu pl-4">
-        <li><a routerLink="/estado-salud" class="block p-2 hover:bg-gray-600">Estado Salud</a></li>
-        <li><a routerLink="/reproduccion" class="block p-2 hover:bg-gray-600">Reproducción</a></li>
-        <li><a routerLink="/tratamientos" class="block p-2 hover:bg-gray-600">Tratamientos</a></li>
-        <li><a routerLink="/vacunas" class="block p-2 hover:bg-gray-600">Vacunas</a></li>
-        <li><a routerLink="/celo" class="block p-2 hover:bg-gray-600">Celo</a></li>
-        <li><a routerLink="/apareamiento" class="block p-2 hover:bg-gray-600">Apareamiento</a></li>
+        <li><a routerLink="dashboard/estado-salud" class="block p-2 hover:bg-gray-600">Estado Salud</a></li>
+        <li><a routerLink="dashboard/reproduccion" class="block p-2 hover:bg-gray-600">Reproducción</a></li>
+        <li><a routerLink="dashboard/tratamientos" class="block p-2 hover:bg-gray-600">Tratamientos</a></li>
+        <li><a routerLink="dashboard/vacunas" class="block p-2 hover:bg-gray-600">Vacunas</a></li>
+        <li><a routerLink="dashboard/celo" class="block p-2 hover:bg-gray-600">Celo</a></li>
+        <li><a routerLink="dashboard/apareamiento" class="block p-2 hover:bg-gray-600">Apareamiento</a></li>
       </ul>
     </li>
 
     <!-- Alimentación -->
     <li>
       <button 
-      class="dropdown-btn w-full text-left p-3 hover:bg-gray-700 flex justify-between items-center" 
+      class="dropdown-btn w-full text-left p-3 hover:bg-green-800 flex justify-between items-center" 
       (click)="toggleSubMenu('alimentacion')">
       <span class="flex items-center space-x-2">
         <fa-icon [icon]="faCarrot"></fa-icon>
