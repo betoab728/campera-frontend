@@ -4,9 +4,11 @@ import { Cattle } from '../models/cattle.interface';
 import { CommonModule } from '@angular/common';
 //fontawesome
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+//para las rutas
+import { RouterLink } from '@angular/router';
+
 
 //pipe fecha
 
@@ -15,7 +17,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
   standalone: true,
   templateUrl: './cattle-list.component.html',
   styleUrls: ['./cattle-list.component.css'],
-  imports: [CommonModule,FontAwesomeModule]
+  imports: [CommonModule,FontAwesomeModule,RouterLink]
 })
 export class CattleListComponent implements OnInit {
   cattleList: Cattle[] = []; // Lista de ganado
@@ -40,8 +42,5 @@ export class CattleListComponent implements OnInit {
     });
   }
 
-  nuevo(): void{
 
-  }
-  
 }

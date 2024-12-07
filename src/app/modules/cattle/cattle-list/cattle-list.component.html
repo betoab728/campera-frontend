@@ -1,12 +1,8 @@
 <div class="overflow-x-auto p-6"> 
   <div class="flex justify-between items-center mb-4">
     <h2 class="text-2xl font-bold text-green-600">Listado de Ganado</h2>
-    <button
-      class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-lg shadow-md"
-      (click)="nuevo()"
-    >
-      <i class="fas fa-plus mr-2"></i> Agregar Nuevo
-    </button>
+
+    <a routerLink="/dashboard/ganado/nuevo" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-lg shadow-md">Nuevo</a>
   </div>
   <table
     class="min-w-full bg-white border border-[#d1ecf1] rounded-lg shadow-lg"
