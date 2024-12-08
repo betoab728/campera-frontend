@@ -1,1 +1,42 @@
-<p>treatment-list works!</p>
+<div class="overflow-x-auto p-6">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-bold text-green-600">Tratamientos</h2>
+    <a routerLink="/dashboard/tratamientos/nuevo" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-lg shadow-md">Nuevo</a>
+  </div>
+  <div>
+    <table class="min-w-full bg-white border border-[#d1ecf1] rounded-lg shadow-lg">
+      <thead>
+        <tr class="bg-green-900 text-white uppercase text-sm leading-normal">
+          <th class="py-3 px-6 text-left border-b border-[#d1ecf1]">Fecha</th>
+          <th class="py-3 px-6 text-left border-b border-[#d1ecf1]">ID Ganado</th>
+          <th class="py-3 px-6 text-left border-b border-[#d1ecf1]">Descripción</th>
+          <th class="py-3 px-6 text-center border-b border-[#d1ecf1]">Acciones</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-600 text-sm font-light">
+        <tr
+          *ngFor="let treatment of treatmentList"
+          class="odd:bg-white even:bg-green-100 hover:bg-green-50 border-b border-[#d1ecf1]"
+        >
+          <td class="py-3 px-6 text-left">{{ treatment.fecha }}</td>
+          <td class="py-3 px-6 text-left">{{ treatment.idGanado }}</td>
+          <td class="py-3 px-6 text-left">{{ treatment.descripcion }}</td>
+          <td class="py-3 px-6 text-center">
+            <div class="flex justify-center">
+              <button
+                class="w-8 h-8 mx-1 bg-sky-400 hover:bg-sky-500 text-white rounded-lg flex items-center justify-center"
+              >
+                <fa-icon [icon]="faEdit"></fa-icon>
+              </button>
+              <button
+                class="w-8 h-8 mx-1 bg-red-500 hover:bg-red-600 text-white rounded-lg"
+              >
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,1 +1,38 @@
-<p>breed-add works!</p>
+<div class="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md border border-green-500">
+    <h2 class="text-2xl font-bold mb-4 text-green-600">Agregar Raza</h2>
+    <form #breedForm="ngForm" (ngSubmit)="agregarRaza()">
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+          name="nombre"
+          [(ngModel)]="breed.nombre"
+          required
+          placeholder="Ingrese el nombre"
+        />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="descripcion">Descripción</label>
+        <textarea
+          id="descripcion"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+          name="descripcion"
+          [(ngModel)]="breed.descripcion"
+          required
+          placeholder="Ingrese la descripción"
+        ></textarea>
+      </div>
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+    <small *ngIf="errorMessage" class="text-red-500">{{ errorMessage }}</small>
+  </div>
+  

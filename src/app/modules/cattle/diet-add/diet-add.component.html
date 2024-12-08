@@ -1,1 +1,76 @@
-<p>diet-add works!</p>
+<div class="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md border border-green-400">
+    <h2 class="text-2xl font-bold mb-4 text-green-600">Agregar Dieta</h2>
+    <form #dietForm="ngForm" (ngSubmit)="agregarDieta()">
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="nombre">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+          name="nombre"
+          [(ngModel)]="diet.nombre"
+          #nombre="ngModel"
+          required
+          placeholder="Ingrese el nombre de la dieta"
+        />
+        <small *ngIf="nombre.invalid && nombre.touched" class="text-red-500">
+          El nombre es obligatorio.
+        </small>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="idTipoGanado"
+          >Tipo de Ganado</label
+        >
+        <select
+          id="idTipoGanado"
+          [(ngModel)]="diet.idTipoGanado"
+          name="idTipoGanado"
+          required
+          #idTipoGanado="ngModel"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+        >
+          <option *ngFor="let cattle of cattleTypes" [value]="cattle.idTipo">
+            {{ cattle.nombre }}
+          </option>
+        </select>
+        <small *ngIf="idTipoGanado.invalid && idTipoGanado.touched" class="text-red-500">
+          El tipo de ganado es obligatorio.
+        </small>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="descripcion">Descripción</label>
+        <textarea
+          id="descripcion"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+          name="descripcion"
+          [(ngModel)]="diet.descripcion"
+          placeholder="Ingrese la descripción (opcional)"
+        ></textarea>
+      </div>
+  
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="fecha">Fecha</label>
+        <input
+          id="fecha"
+          type="date"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+          name="fecha"
+          [(ngModel)]="diet.fecha"
+          required
+        />
+      </div>
+  
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          [disabled]="dietForm.invalid"
+          class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+  

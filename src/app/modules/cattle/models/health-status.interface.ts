@@ -1,10 +1,10 @@
 export interface HealthStatus {
     idEstado: number;
-    idGanado: number;
+    idganado: number;
     fecha: Date;
     peso: number; // Hasta 5 decimales
     temperatura: string;
-    observaciones?: string; // Opcional
-    estadoVida: string;
+    observacion?: string; // Opcional
+    estadovida: string;
   }
   

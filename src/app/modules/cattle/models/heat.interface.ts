@@ -2,7 +2,7 @@ export interface Heat {
     id: number;
     idGanado: number;
     fechaInicio: Date;
-    fechaFin: Date;
+    fechafin: Date;
     observaciones?: string; // Opcional
   }
   

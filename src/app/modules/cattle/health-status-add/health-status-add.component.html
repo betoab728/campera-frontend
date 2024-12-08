@@ -1,1 +1,103 @@
-<p>health-status-add works!</p>
+<div class="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md border border-green-400">
+    <h2 class="text-2xl font-bold mb-4 text-green-600">Agregar Estado de Salud</h2>
+    <form #healthForm="ngForm" (ngSubmit)="agregarEstadoSalud()">
+      <!-- Ganado -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="idganado">Ganado</label>
+        <select
+          id="idganado"
+          [(ngModel)]="healthStatus.idganado"
+          name="idganado"
+          required
+          #idganado="ngModel"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+        >
+          <option *ngFor="let cattle of cattleList" [value]="cattle.idGanado">
+            {{ cattle.nombre }}
+          </option>
+        </select>
+        <small *ngIf="idganado.invalid && idganado.touched" class="text-red-500">
+          Seleccionar un ganado es obligatorio.
+        </small>
+      </div>
+  
+      <!-- Fecha -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="fecha">Fecha</label>
+        <input
+          id="fecha"
+          type="date"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+          name="fecha"
+          [(ngModel)]="healthStatus.fecha"
+          required
+        />
+      </div>
+  
+      <!-- Peso -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="peso">Peso (kg)</label>
+        <input
+          id="peso"
+          type="number"
+          step="0.00001"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+          name="peso"
+          [(ngModel)]="healthStatus.peso"
+          required
+        />
+      </div>
+  
+      <!-- Temperatura -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="temperatura">Temperatura (°C)</label>
+        <input
+          id="temperatura"
+          type="text"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+          name="temperatura"
+          [(ngModel)]="healthStatus.temperatura"
+          required
+        />
+      </div>
+  
+      <!-- Estado de vida -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="estadovida">Estado de Vida</label>
+        <select
+          id="estadovida"
+          [(ngModel)]="healthStatus.estadovida"
+          name="estadovida"
+          required
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+        >
+          <option value="v">Vivo</option>
+          <option value="m">Muerto</option>
+        </select>
+      </div>
+  
+      <!-- Observación -->
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="observacion">Observación</label>
+        <textarea
+          id="observacion"
+          class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-green-400"
+          name="observacion"
+          [(ngModel)]="healthStatus.observacion"
+          placeholder="Ingrese alguna observación (opcional)"
+        ></textarea>
+      </div>
+  
+      <!-- Botón Guardar -->
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          [disabled]="healthForm.invalid"
+          class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+  
