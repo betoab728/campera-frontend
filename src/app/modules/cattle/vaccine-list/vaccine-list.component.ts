@@ -7,13 +7,15 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { RouterLink } from '@angular/router';
+//para las rutas
 
 @Component({
   selector: 'app-vaccine-list',
   standalone: true,
   templateUrl: './vaccine-list.component.html',
   styleUrls: ['./vaccine-list.component.css'],
-  imports: [CommonModule,FontAwesomeModule]
+  imports: [CommonModule,FontAwesomeModule,RouterLink]
 })
 export class VaccineListComponent implements OnInit {
   vaccineList: Vaccine[] = []; // Lista de vacunas

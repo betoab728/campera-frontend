@@ -1,7 +1,7 @@
 export interface Mating {
     idApareamiento: number;
-    idHembra: number;
-    idMacho: number;
+    idhembra: number;
+    idmacho: number;
     fecha: Date;
     observaciones?: string; // Opcional
     resultado: string;

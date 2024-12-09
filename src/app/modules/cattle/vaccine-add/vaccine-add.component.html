@@ -1,1 +1,67 @@
-<p>vaccine-add works!</p>
+<div class="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md border border-green-400">
+    <h2 class="text-2xl font-bold mb-4 text-gray-800">Registrar Vacuna</h2>
+  
+    <!-- Select para el ganado -->
+    <div class="mb-4">
+      <label for="cattle" class="block text-sm font-medium text-gray-700">
+        Ganado
+      </label>
+      <select
+        id="cattle"
+        [(ngModel)]="vaccine.idganado"
+        name="cattle"
+        required
+        class="mt-1 block w-full px-3 py-2 border border-green-500 rounded-md shadow-sm focus:outline-none"
+      >
+        <option [value]="0">Seleccione un ganado</option>
+        <option *ngFor="let cattle of cattleList" [value]="cattle.idGanado">
+          {{ cattle.nombre }}
+        </option>
+      </select>
+      <div class="text-red-500 text-sm mt-1" *ngIf="vaccine.idganado === 0">
+        Por favor seleccione un ganado.
+      </div>
+    </div>
+  
+    <!-- Fecha -->
+    <div class="mb-4">
+      <label for="fecha" class="block text-sm font-medium text-gray-700">
+        Fecha
+      </label>
+      <input
+        type="date"
+        id="fecha"
+        [(ngModel)]="vaccine.fecha"
+        name="fecha"
+        required
+        class="mt-1 block w-full px-3 py-2 border border-green-500 rounded-md shadow-sm focus:outline-none"
+      />
+    </div>
+  
+    <!-- Observaciones -->
+    <div class="mb-4">
+      <label for="observaciones" class="block text-sm font-medium text-gray-700">
+        Observaciones
+      </label>
+      <textarea
+        id="observaciones"
+        [(ngModel)]="vaccine.observaciones"
+        name="observaciones"
+        rows="3"
+        class="mt-1 block w-full px-3 py-2 border border-green-500 rounded-md shadow-sm focus:outline-none"
+        placeholder="Ingrese observaciones (opcional)"
+      ></textarea>
+    </div>
+  
+    <!-- Botón Guardar -->
+    <div class="flex justify-end">
+      <button
+        type="button"
+        (click)="addVaccine()"
+        class="bg-green-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-green-600"
+      >
+        Guardar
+      </button>
+    </div>
+  </div>
+  

@@ -1,6 +1,6 @@
 export interface Vaccine {
     idVacuna: number;
-    idGanado: number;
+    idganado: number;
     fecha: Date;
     observaciones?: string; // Opcional
   }

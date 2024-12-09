@@ -1,7 +1,7 @@
 export interface Cattle {
     idGanado: number;
     nombre: string;
-    sexo: 'M' | 'F';
+    sexo: 'Macho' | 'Hembra';
     nacimiento: Date;
     idTipo: number;
     idRaza: number;

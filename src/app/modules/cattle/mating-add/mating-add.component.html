@@ -1,1 +1,91 @@
-<p>mating-add works!</p>
+<div class="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md border border-green-400">
+  <h2 class="text-2xl font-bold mb-4 text-green-600">Registrar Apareamiento</h2>
+
+  <!-- Error -->
+  <div *ngIf="errorMessage" class="text-red-500 text-sm mb-4">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Select para Hembra -->
+  <div class="mb-4">
+    <label for="femaleCattle" class="block text-sm font-medium text-green-700">Ganado Hembra</label>
+    <select
+      id="femaleCattle"
+      [(ngModel)]="mating.idhembra"
+      name="femaleCattle"
+      required
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
+    >
+      <option [value]="0">Seleccione una hembra</option>
+      <option *ngFor="let cattle of femaleCattleList" [value]="cattle.idGanado">
+        {{ cattle.nombre }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Select para Macho -->
+<div class="mb-4">
+    <label for="maleCattle" class="block text-sm font-medium text-green-700">Ganado Macho</label>
+    <select
+      id="maleCattle"
+      [(ngModel)]="mating.idmacho"
+      name="maleCattle"
+      required
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
+    >
+      <option [value]="0">Seleccione un macho</option>
+      <option *ngFor="let cattle of maleCattleList" [value]="cattle.idGanado">
+        {{ cattle.nombre }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Fecha del Apareamiento -->
+  <div class="mb-4">
+    <label for="fecha" class="block text-sm font-medium text-green-700">Fecha del Apareamiento</label>
+    <input
+      type="date"
+      id="fecha"
+      [(ngModel)]="mating.fecha"
+      name="fecha"
+      required
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
+    />
+  </div>
+
+  <!-- Observaciones -->
+  <div class="mb-4">
+    <label for="observaciones" class="block text-sm font-medium text-green-700">Observaciones</label>
+    <textarea
+      id="observaciones"
+      [(ngModel)]="mating.observaciones"
+      name="observaciones"
+      rows="3"
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
+    ></textarea>
+  </div>
+
+  <!-- Resultado -->
+  <div class="mb-4">
+    <label for="resultado" class="block text-sm font-medium text-green-700">Resultado</label>
+    <input
+      type="text"
+      id="resultado"
+      [(ngModel)]="mating.resultado"
+      name="resultado"
+      required
+      class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none"
+    />
+  </div>
+
+  <!-- Botón Guardar -->
+  <div class="flex justify-end">
+    <button
+      type="button"
+      (click)="addMating()"
+      class="bg-green-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-green-600"
+    >
+      Guardar
+    </button>
+  </div>
+</div>
