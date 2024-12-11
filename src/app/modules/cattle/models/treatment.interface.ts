@@ -1,6 +1,6 @@
 export interface Treatment {
     idTratamiento: number;
-    idGanado: number;
+    idganado: number;
     fecha: Date;
     descripcion: string;
   }

@@ -1,5 +1,5 @@
 export interface Breed {
-    idRaza: number;
+    idraza: number;
     nombre: string;
     descripcion?: string; // Opcional
   }

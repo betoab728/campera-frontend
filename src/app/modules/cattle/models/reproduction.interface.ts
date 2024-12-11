@@ -1,6 +1,6 @@
 export interface Reproduction {
     idReproduccion: number;
-    idGanado: number;
+    idganado: number;
     fecha: Date;
     crias: number;
     observaciones?: string; // Opcional

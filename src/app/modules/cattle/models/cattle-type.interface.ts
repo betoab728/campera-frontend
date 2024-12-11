@@ -1,5 +1,5 @@
 export interface CattleType {
-    idTipo: number;
+    idtipoganado: number;
     nombre: string;
     descripcion: string;
   }

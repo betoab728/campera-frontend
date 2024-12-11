@@ -20,7 +20,7 @@ export class DietAddComponent implements OnInit {
   diet: Diet = {
     idDieta: 0,
     nombre: '',
-    idTipoGanado: 0,
+    idtipoganado: 0,
     descripcion: '',
     fecha: new Date(),
   };
@@ -54,7 +54,7 @@ export class DietAddComponent implements OnInit {
   }
 
   agregarDieta(): void {
-    if (!this.diet.nombre || !this.diet.idTipoGanado || !this.diet.fecha) {
+    if (!this.diet.nombre || !this.diet.idtipoganado || !this.diet.fecha) {
       this.errorMessage = 'Todos los campos son requeridos';
       return;
     }

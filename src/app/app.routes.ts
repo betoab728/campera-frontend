@@ -38,6 +38,7 @@ export const routes: Routes = [
         {path: 'tipo/nuevo',loadComponent: () => import('./modules/cattle/type-add/type-add.component').then(m => m.TypeAddComponent) },
         {path: 'ganado',loadComponent: () => import('./modules/cattle/cattle-list/cattle-list.component').then(m => m.CattleListComponent) },
         {path: 'ganado/nuevo',loadComponent: () => import('./modules/cattle/cattle-add/cattle-add.component').then(m => m.CattleAddComponent) },
+        {path:'consulta',loadComponent: () => import('./modules/cattle/search/search.component').then(m => m.SearchComponent) },
     ] },
 
   

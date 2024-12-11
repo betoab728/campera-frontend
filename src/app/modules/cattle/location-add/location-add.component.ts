@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 export class LocationAddComponent implements OnInit {
   // Objeto ubicación
   location: Location = {
-    idUbicacion: 0,
+    idubicacion: 0,
     nombre: '',
     descripcion: ''
   };

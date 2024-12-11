@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 export class TypeAddComponent implements OnInit {
   // Objeto tipo de ganado
   cattleType: CattleType = {
-    idTipo: 0,
+    idtipoganado: 0,
     nombre: '',
     descripcion: ''
   };

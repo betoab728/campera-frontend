@@ -1,5 +1,5 @@
 export interface Location {
-    idUbicacion: number;
+    idubicacion: number;
     nombre: string;
     descripcion?: string; // Opcional
   }

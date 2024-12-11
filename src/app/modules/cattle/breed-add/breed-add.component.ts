@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class BreedAddComponent {
   // Objeto raza
   breed: Breed = {
-    idRaza: 0,
+    idraza: 0,
     nombre: '',
     descripcion: ''
   };

@@ -1,0 +1,104 @@
+<div class="search-bar flex justify-between p-4 bg-white border-b border-gray-300">
+  <input
+    type="text"
+    [(ngModel)]="animalId"
+    placeholder="Ingrese ID del animal"
+    class="p-2 w-3/5 border border-green-400 focus:outline-none focus:border-green-400 rounded"
+  />
+  <button (click)="searchAnimal()" class="p-2 px-4 bg-green-500 text-white rounded hover:bg-green-600">
+    Buscar
+  </button>
+</div>
+
+<!-- Mostrar detalles del animal -->
+<div *ngIf="animal" class="animal-details flex flex-wrap p-6 bg-white rounded-lg shadow-lg mt-4 mx-4 border border border-green-500">
+  <div class="animal-image flex-1 max-w-xs text-center mr-6">
+    <img [src]="getAnimalImage(animal.tipoGanado)" alt="{{ animal.tipoGanado }}" class="w-full h-auto rounded-lg">
+  </div>
+  <div class="animal-info-container flex-2 max-w-lg">
+    <h3 class="text-xl font-semibold mb-4">Detalles del Animal</h3>
+    <table class="animal-info w-full table-auto">
+      <tr>
+        <td class="p-2"><strong>ID Ganado:</strong></td>
+        <td class="p-2">{{ animal.idganado }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Nombre:</strong></td>
+        <td class="p-2">{{ animal.nombre }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Sexo:</strong></td>
+        <td class="p-2">{{ animal.sexo }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Fecha de Nacimiento:</strong></td>
+        <td class="p-2">{{ animal.fechaNacimiento | date:'dd/MM/yyyy' }}</td> <!-- Formato personalizado -->
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Tipo de Ganado:</strong></td>
+        <td class="p-2">{{ animal.tipoGanado }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Raza:</strong></td>
+        <td class="p-2">{{ animal.raza }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Ubicación:</strong></td>
+        <td class="p-2">{{ animal.ubicacion }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Dieta:</strong></td>
+        <td class="p-2">{{ animal.dieta }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Última Fecha de Salud:</strong></td>
+        <td class="p-2">{{ animal.fechaEstadoSalud | date:'dd/MM/yyyy' }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Peso:</strong></td>
+        <td class="p-2">{{ animal.peso || 'No disponible' }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Temperatura:</strong></td>
+        <td class="p-2">{{ animal.temperatura || 'No disponible' }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Fecha de Celo:</strong></td>
+        <td class="p-2">{{ animal.fechaCelo | date:'dd/MM/yyyy' }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Fecha Fin Celo:</strong></td>
+        <td class="p-2">{{ animal.fechaFinCelo | date:'dd/MM/yyyy'  }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Fecha de Apareamiento:</strong></td>
+        <td class="p-2">{{ animal.fechaApareamiento | date:'dd/MM/yyyy' }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Resultado Apareamiento:</strong></td>
+        <td class="p-2">{{ animal.resultadoApareamiento || 'No disponible' }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Fecha de Reproducción:</strong></td>
+        <td class="p-2">{{ animal.fechaReproduccion | date:'dd/MM/yyyy'}}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Resultado Reproducción:</strong></td>
+        <td class="p-2">{{ animal.resultadoReproduccion || 'No disponible' }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Fecha de Última Vacuna:</strong></td>
+        <td class="p-2">{{ animal.fechaVacuna | date:'dd/MM/yyyy' }}</td>
+      </tr>
+      <tr>
+        <td class="p-2"><strong>Tratamiento:</strong></td>
+        <td class="p-2">{{ animal.tratamiento || 'No disponible' }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- Mostrar mensaje de error -->
+<div *ngIf="errorMessage" class="error bg-red-100 text-red-700 p-4 rounded mt-4 mx-4">
+  <p>{{ errorMessage }}</p>
+</div>

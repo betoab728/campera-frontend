@@ -1,7 +1,7 @@
 export interface Diet {
     idDieta: number;
     nombre: string;
-    idTipoGanado: number;
+    idtipoganado: number;
     descripcion?: string; // Opcional
     fecha: Date;
   }

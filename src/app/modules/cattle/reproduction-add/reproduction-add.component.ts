@@ -18,7 +18,7 @@ import Swal from 'sweetalert2';
 export class ReproductionAddComponent implements OnInit {
   reproduction: Reproduction = {
     idReproduccion: 0,
-    idGanado: 0,
+    idganado: 0,
     fecha: new Date(),
     crias: 0,
     observaciones: '',
@@ -49,7 +49,7 @@ export class ReproductionAddComponent implements OnInit {
   }
 
   agregarReproduccion(): void {
-    if (!this.reproduction.idGanado || !this.reproduction.fecha || !this.reproduction.crias) {
+    if (!this.reproduction.idganado || !this.reproduction.fecha || !this.reproduction.crias) {
       this.errorMessage = 'Todos los campos son requeridos.';
       return;
     }
@@ -76,7 +76,7 @@ export class ReproductionAddComponent implements OnInit {
               'Los datos de reproducción han sido registrados correctamente.',
               'success'
             );
-            this.router.navigate(['/dashboard/reproducciones']);
+            this.router.navigate(['/dashboard/reproduccion']);
           },
           error: (error) => {
             Swal.fire(

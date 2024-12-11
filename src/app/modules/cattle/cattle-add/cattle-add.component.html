@@ -1,1 +1,93 @@
-<p>cattle-add works!</p>
+<div class="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md border border-green-400">
+    <h2 class="text-2xl font-bold mb-4 text-green-600">Registrar Ganado</h2>
+    <form #cattleForm="ngForm" (ngSubmit)="agregarGanado()">
+      <div class="mb-4">
+        <label for="nombre" class="block text-gray-700 font-bold mb-2">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          [(ngModel)]="cattle.nombre"
+          name="nombre"
+          required
+          class="w-full p-2 border rounded-md focus:border-green-400"
+          placeholder="Ingrese el nombre del ganado"
+        />
+      </div>
+  
+      <div class="mb-4">
+        <label for="sexo" class="block text-gray-700 font-bold mb-2">Sexo</label>
+        <select
+          id="sexo"
+          [(ngModel)]="cattle.sexo"
+          name="sexo"
+          required
+          class="w-full p-2 border rounded-md focus:border-green-400"
+        >
+          <option value="Macho">Macho</option>
+          <option value="Hembra">Hembra</option>
+        </select>
+      </div>
+  
+      <div class="mb-4">
+        <label for="nacimiento" class="block text-gray-700 font-bold mb-2">Fecha de Nacimiento</label>
+        <input
+          id="nacimiento"
+          type="date"
+          [(ngModel)]="cattle.nacimiento"
+          name="nacimiento"
+          required
+          class="w-full p-2 border rounded-md focus:border-green-400"
+        />
+      </div>
+  
+      <div class="mb-4">
+        <label for="idRaza" class="block text-gray-700 font-bold mb-2">Raza</label>
+        <select
+          id="idRaza"
+          [(ngModel)]="cattle.idraza"
+          name="idRaza"
+          required
+          class="w-full p-2 border rounded-md focus:border-green-400"
+        >
+          <option *ngFor="let breed of breeds" [value]="breed.idraza">{{ breed.nombre }}</option>
+        </select>
+      </div>
+  
+      <div class="mb-4">
+        <label for="idTipo" class="block text-gray-700 font-bold mb-2">Tipo de Ganado</label>
+        <select
+          id="idTipo"
+          [(ngModel)]="cattle.idtipoganado"
+          name="idTipo"
+          required
+          class="w-full p-2 border rounded-md focus:border-green-400"
+        >
+          <option *ngFor="let type of cattleTypes" [value]="type.idtipoganado">{{ type.nombre }}</option>
+        </select>
+      </div>
+  
+      <div class="mb-4">
+        <label for="idUbicacion" class="block text-gray-700 font-bold mb-2">Ubicación</label>
+        <select
+          id="idUbicacion"
+          [(ngModel)]="cattle.idubicacion"
+          name="idUbicacion"
+          required
+          class="w-full p-2 border rounded-md focus:border-green-400"
+        >
+          <option *ngFor="let location of locations" [value]="location.idubicacion">{{ location.nombre }}</option>
+        </select>
+      </div>
+  
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          [disabled]="cattleForm.invalid"
+          class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+  

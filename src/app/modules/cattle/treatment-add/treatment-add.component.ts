@@ -18,7 +18,7 @@ import Swal from 'sweetalert2';
 export class TreatmentAddComponent implements OnInit {
   treatment: Treatment = {
     idTratamiento: 0,
-    idGanado: 0,
+    idganado: 0,
     fecha: new Date(),
     descripcion: '',
   };
@@ -48,7 +48,7 @@ export class TreatmentAddComponent implements OnInit {
   }
 
   agregarTratamiento(): void {
-    if (!this.treatment.idGanado || !this.treatment.fecha || !this.treatment.descripcion.trim()) {
+    if (!this.treatment.idganado || !this.treatment.fecha || !this.treatment.descripcion.trim()) {
       this.errorMessage = 'Todos los campos son obligatorios.';
       return;
     }

@@ -1,11 +1,11 @@
 export interface Cattle {
-    idGanado: number;
+    idganado: number;
     nombre: string;
     sexo: 'Macho' | 'Hembra';
     nacimiento: Date;
-    idTipo: number;
-    idRaza: number;
-    idUbicacion: number;
+    idtipoganado: number;
+    idraza: number;
+    idubicacion: number;
     estadoReproductivo: string; // 'P' (Preñada) o 'N' (Normal)
   }
   
